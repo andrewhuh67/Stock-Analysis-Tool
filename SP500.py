@@ -63,3 +63,10 @@ def get_data_from_yahoo(reload_sp500=False):
 
 		else:
 			print('Already have {}'.format(ticker))
+
+# combines all the ticker data into one single dataframe
+def compile_data():
+	with open("sp500tickers.pickle", "rb") as f:
+		tickers = pickle.load(f)
+
+	main_df = pd.DataFrame()
