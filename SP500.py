@@ -91,3 +91,13 @@ def compile_data():
 
 	print(main_df.head())
 	main_df.to_csv('sp500_joined_closes.csv')
+
+# creates visualization from the data that was offered.
+def visualize_data():
+	df = pd.read_csv('sp500_joined_closes.csv')
+	# df['AAPL'].plot()
+	# plt.show()
+
+	df_corr = df.corr()
+
+	print(df_corr.head())
